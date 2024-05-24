@@ -1,0 +1,10 @@
+pkg
+dist
+build
+tests
+doc
+*.log
+*.tmp
+.vscode
+.github
+config
