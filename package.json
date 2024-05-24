@@ -73,7 +73,7 @@
       "${systemd.unit.dir}${name}.service": "pkg/${name}.service",
       "${config.dir}config.json": "config/config.json"
     },
-    "http.path": "/services/${name}/api",
+    "http.path": "/services/csp",
     "kronos": true
   },
   "release": {
