@@ -4,7 +4,6 @@ import initialize from "./initialize.mjs";
 import { StandaloneServiceProvider } from "@kronos-integration/service";
 
 const args = process.argv.slice(2);
-const opt = { encoding: "utf8" };
 
 switch (args[0]) {
   case "--version":
@@ -36,7 +35,7 @@ initializeServiceProvider();
 
 function info() {
   return JSON.parse(
-    readFileSync(new URL("../package.json", import.meta.url).pathname, opt)
+    readFileSync(new URL("../package.json", import.meta.url).pathname, "utf8")
   );
 }
 
@@ -49,7 +48,7 @@ async function initializeServiceProvider() {
     } catch (e) {
       serviceProvider = new StandaloneServiceProvider(
         JSON.parse(
-          readFileSync(join(args[1], "config.json"), opt)
+          readFileSync(join(args[1], "config.json"), "utf8")
         )
       );
     }
