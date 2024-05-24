@@ -3,11 +3,13 @@ import {
   ServiceHTTP,
   CTXBodyParamInterceptor
 } from "@kronos-integration/service-http";
+import ServiceCSP from "./service-csp.mjs";
 
 export default async function initialize(sp) {
   sp.registerFactories([
     ServiceHTTP,
-    CTXBodyParamInterceptor
+    CTXBodyParamInterceptor,
+    ServiceCSP
   ]);
 
   const bodyParamInterceptor = new CTXBodyParamInterceptor();
