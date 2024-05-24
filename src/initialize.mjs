@@ -28,6 +28,8 @@ export default async function initialize(sp) {
         }
       }
     },
-    csp: {}
+    csp: {
+      autostart: true
+    }
   });
 }
