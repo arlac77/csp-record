@@ -54,13 +54,6 @@ jobs:
           https://github.com/ThePoorPilot/pacman-utils/releases/download/5.2.2-3_2.31-0/pacman-utils_5.2.2-3_amd64.deb
 
           sudo apt-get install -f ./pacman-utils_5.2.2-3_amd64.deb
-      - run: npx semantic-release
-        env:
-          PKGBUILD_PUBLISH: ${{ secrets.PKGBUILD_PUBLISH }}
-          PKGEXT: .pkg.tar.xz
-          CI: "true"
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v4.1.6
       - uses: actions/setup-node@v4.0.2
         with:
@@ -68,6 +61,13 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
       - run: npm ci
+      - run: npx semantic-release
+        env:
+          CI: "true"
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PKGEXT: .pkg.tar.xz
+          PKGBUILD_PUBLISH: ${{ secrets.PKGBUILD_PUBLISH }}
   finish:
     needs:
       - test-node
