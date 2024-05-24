@@ -27,6 +27,7 @@ export default async function initialize(sp) {
           connected: "service(csp).upload"
         }
       }
-    }
+    },
+    csp: {}
   });
 }
