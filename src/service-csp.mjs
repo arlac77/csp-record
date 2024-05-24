@@ -2,10 +2,10 @@ import { Service } from "@kronos-integration/service";
 
 export class ServiceCSP extends Service {
   /**
-   * @return {string} 'csp-upload'
+   * @return {string} 'csp'
    */
   static get name() {
-    return "csp-upload";
+    return "csp";
   }
 
   static get endpoints() {
