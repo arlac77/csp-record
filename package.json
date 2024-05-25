@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@kronos-integration/service": "^11.0.0",
-    "@kronos-integration/service-http": "^10.7.0"
+    "@kronos-integration/service-http": "^10.7.1"
   },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^12.0.0",
