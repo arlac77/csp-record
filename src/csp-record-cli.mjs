@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import initialize from "./initialize.mjs";
+import pkg from "../package.json" with { type: "json" };
 import { StandaloneServiceProvider } from "@kronos-integration/service";
 
 const args = process.argv.slice(2);
@@ -8,7 +9,7 @@ const args = process.argv.slice(2);
 switch (args[0]) {
   case "--version":
     {
-      const { version } = info();
+      const { version } = pkg;
       console.log(version);
       process.exit(0);
     }
@@ -16,7 +17,7 @@ switch (args[0]) {
   case "--help":
   case "-h":
     {
-      const { description, version } = info();
+      const { description, version } = pkg;
       console.log(`${description} (${version});
 usage:
  -h --help this help screen
@@ -32,12 +33,6 @@ usage:
 }
 
 initializeServiceProvider();
-
-function info() {
-  return JSON.parse(
-    readFileSync(new URL("../package.json", import.meta.url).pathname, "utf8")
-  );
-}
 
 async function initializeServiceProvider() {
   try {
