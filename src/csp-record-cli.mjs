@@ -9,16 +9,14 @@ const args = process.argv.slice(2);
 switch (args[0]) {
   case "--version":
     {
-      const { version } = pkg;
-      console.log(version);
+      console.log(pkg.version);
       process.exit(0);
     }
     break;
   case "--help":
   case "-h":
     {
-      const { description, version } = pkg;
-      console.log(`${description} (${version});
+      console.log(`${pkg.description} (${pkg.version});
 usage:
  -h --help this help screen
  -c --config <directory> set config directory`);
