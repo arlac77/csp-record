@@ -13,11 +13,13 @@ export class ServiceCSP extends Service {
       ...super.endpoints,
       upload: {
         default: true,
-        receive: async report => {
-          this.info(JSON.stringify(report));
-        }
+        receive: "upload"
       }
     };
+  }
+
+  async upload(report) {
+    this.info(JSON.stringify(report));
   }
 }
 
