@@ -12,7 +12,6 @@ export class ServiceCSP extends Service {
     return {
       ...super.endpoints,
       upload: {
-        default: true,
         receive: "upload"
       }
     };
@@ -22,5 +21,3 @@ export class ServiceCSP extends Service {
     this.info(JSON.stringify(report));
   }
 }
-
-export default ServiceCSP;
