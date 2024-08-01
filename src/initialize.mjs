@@ -5,9 +5,16 @@ import {
 import { ServiceCSP } from "./service-csp.mjs";
 
 export default async function initialize(sp) {
+  const interceptors = new CTXBodyParamInterceptor();
+  interceptors.typeDecoders = Object.assign(
+    { "application/csp-report": interceptors.typeDecoders["application/json"] },
+    interceptors.typeDecoders,
+    {}
+  );
+
   const POST = {
     method: "POST",
-    interceptors: new CTXBodyParamInterceptor()
+    interceptors
   };
 
   await sp.declareServices({
