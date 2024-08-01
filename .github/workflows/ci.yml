@@ -37,23 +37,13 @@ jobs:
   release:
     needs:
       - test-node
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     permissions:
       contents: write
       issues: write
       pull-requests: write
       id-token: write
     steps:
-      - name: Dependencies
-        run: >
-          sudo apt-get update
-
-          sudo apt-get install ksh curl
-
-          wget
-          https://github.com/ThePoorPilot/pacman-utils/releases/download/5.2.2-3_2.31-0/pacman-utils_5.2.2-3_amd64.deb
-
-          sudo apt-get install -f ./pacman-utils_5.2.2-3_amd64.deb
       - uses: actions/checkout@v4.1.7
       - uses: actions/setup-node@v4.0.3
         with:
