@@ -52,9 +52,9 @@ jobs:
           cache-dependency-path: package-lock.json
       - run: npm ci
       - name: Dependencies
-        run: |
+        run: |2
           which pacman
-          if [ $? -eq 1 ]
+          if [ "$?" -eq 1 ]
           then
             sudo apt-get update
             sudo apt-get install ksh curl
