@@ -37,7 +37,7 @@ jobs:
   release:
     needs:
       - test-node
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       issues: write
@@ -52,13 +52,20 @@ jobs:
           cache-dependency-path: package-lock.json
       - run: npm ci
       - name: Dependencies
-        run: |2
+        run: >
           if [ ! -f /usr/bin/pacman ]
+
           then
+
           sudo apt-get update
+
           sudo apt-get install ksh curl
-          wget https://github.com/ThePoorPilot/pacman-utils/releases/download/5.2.2-3_2.31-0/pacman-utils_5.2.2-3_amd64.deb
+
+          wget
+          https://github.com/ThePoorPilot/pacman-utils/releases/download/5.2.2-3_2.31-0/pacman-utils_5.2.2-3_amd64.deb
+
           sudo apt-get install -f ./pacman-utils_5.2.2-3_amd64.deb
+
           fi
       - run: npx semantic-release
         env:
