@@ -2,10 +2,13 @@
   "name": "csp-record",
   "version": "0.0.0-semantic-release",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
+  "main": "./src/component-manager.mjs",
   "description": "Collect content security (CSP) records",
   "keywords": [
+    "cluster",
     "csp",
     "kronos-integration",
     "systemd"
@@ -18,15 +21,28 @@
   ],
   "license": "BSD-2-Clause",
   "bin": {
+    "cluster-node": "src/cluster-node-cli.mjs",
+    "component-manager": "src/component-manager-cli.mjs",
     "csp-record": "src/csp-record-cli.mjs"
   },
   "scripts": {
     "test": "npm run test:ava",
-    "test:ava": "ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs"
+    "test:ava": "ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs",
+    "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava --timeout 2m && c8 report -r lcov -o build/coverage --temp-directory build/tmp && c8 -x 'tests/**/*' --temp-directory build/tmp ava --node-arguments '--experimental-modules' --timeout 2m"
   },
   "dependencies": {
+    "@kronos-integration/interceptor-decode-json": "^2.1.76",
     "@kronos-integration/service": "^11.0.0",
-    "@kronos-integration/service-http": "^10.9.2"
+    "@kronos-integration/service-admin": "^3.4.66",
+    "@kronos-integration/service-authenticator": "^1.6.56",
+    "@kronos-integration/service-health": "^5.0.180",
+    "@kronos-integration/service-http": "^10.9.2",
+    "@kronos-integration/service-ldap": "^4.0.138",
+    "@kronos-integration/service-repositories": "^2.0.169",
+    "@kronos-integration/service-swarm": "^1.9.86",
+    "config-expander": "^14.0.6",
+    "github-repository-provider": "^9.0.21",
+    "pacote": "^18.0.6"
   },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^13.0.0",
@@ -34,6 +50,8 @@
     "@semantic-release/github": "^10.1.3",
     "@semantic-release/release-notes-generator": "^14.0.1",
     "ava": "^6.1.3",
+    "c8": "^10.1.2",
+    "documentation": "^14.0.0",
     "npm-pkgbuild": "^15.3.29",
     "semantic-release": "^24.0.0"
   },
@@ -127,6 +145,8 @@
   },
   "template": {
     "inheritFrom": [
+      "Kronos-Integration/cluster-node",
+      "arlac77/component-manager",
       "arlac77/template-arlac77-github",
       "arlac77/template-kronos-app"
     ]
