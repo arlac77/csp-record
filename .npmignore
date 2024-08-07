@@ -6,5 +6,8 @@ doc
 *.log
 *.tmp
 .vscode
+deploy
 .github
 config
+update.sh
+service.json
