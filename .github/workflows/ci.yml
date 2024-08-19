@@ -61,7 +61,7 @@ jobs:
           cache-dependency-path: package-lock.json
       - name: install
         run: npm ci
-      - name: Dependencies
+      - name: install dependencies
         run: >
           if [ ! -f /usr/bin/pacman ]
 
