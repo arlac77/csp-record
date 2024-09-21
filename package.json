@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Collect content security (CSP) records",
+  "description": "Collect content security policy (CSP) records",
   "keywords": [
     "csp",
     "kronos-integration",
