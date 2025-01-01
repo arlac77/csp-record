@@ -4,10 +4,7 @@ import {
 } from "@kronos-integration/service-http";
 import { ServiceCSP } from "./service-csp.mjs";
 
-
-
 /*
-
 {
   "csp-report": {
     "blocked-uri": "http://example.com/css/style.css",
@@ -20,15 +17,13 @@ import { ServiceCSP } from "./service-csp.mjs";
     "violated-directive": "style-src-elem"
   }
 }
-
 */
 
 export default async function initialize(sp) {
   const interceptors = new CTXBodyParamInterceptor();
   interceptors.typeDecoders = Object.assign(
     { "application/csp-report": interceptors.typeDecoders["application/json"] },
-    interceptors.typeDecoders,
-    {}
+    interceptors.typeDecoders
   );
 
   const POST = {
