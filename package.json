@@ -25,7 +25,7 @@
     "test:ava": "ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs"
   },
   "dependencies": {
-    "@kronos-integration/service": "^13.2.10",
+    "@kronos-integration/service": "^13.2.12",
     "@kronos-integration/service-http": "^13.0.16"
   },
   "devDependencies": {
@@ -35,7 +35,7 @@
     "@semantic-release/release-notes-generator": "^14.0.3",
     "ava": "^6.4.1",
     "mf-hosting": "^2.8.17",
-    "npm-pkgbuild": "^18.2.24",
+    "npm-pkgbuild": "^18.2.28",
     "semantic-release": "^24.2.7"
   },
   "optionalDependencies": {
