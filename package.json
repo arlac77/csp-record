@@ -25,7 +25,7 @@
     "test:ava": "ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs"
   },
   "dependencies": {
-    "@kronos-integration/service": "^13.2.14",
+    "@kronos-integration/service": "^13.2.30",
     "@kronos-integration/service-http": "^13.0.20"
   },
   "devDependencies": {
