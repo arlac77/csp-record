@@ -34,7 +34,7 @@
     "@semantic-release/github": "^12.0.0",
     "@semantic-release/release-notes-generator": "^14.0.3",
     "ava": "^6.4.1",
-    "mf-hosting": "^2.9.0",
+    "mf-hosting": "^2.9.1",
     "npm-pkgbuild": "^18.3.10",
     "semantic-release": "^25.0.1"
   },
