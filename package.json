@@ -36,7 +36,7 @@
     "ava": "^6.4.1",
     "mf-hosting": "^2.9.1",
     "npm-pkgbuild": "^19.0.1",
-    "semantic-release": "^25.0.1"
+    "semantic-release": "^25.0.2"
   },
   "optionalDependencies": {
     "@kronos-integration/service-systemd": "^4.0.0"
