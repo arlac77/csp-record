@@ -35,7 +35,7 @@
     "@semantic-release/release-notes-generator": "^14.1.0",
     "ava": "^6.4.1",
     "mf-hosting": "^2.9.5",
-    "npm-pkgbuild": "^19.0.5",
+    "npm-pkgbuild": "^19.0.6",
     "semantic-release": "^25.0.2"
   },
   "optionalDependencies": {
