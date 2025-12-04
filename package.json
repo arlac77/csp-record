@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@kronos-integration/service": "^14.0.7",
-    "@kronos-integration/service-http": "^14.0.7"
+    "@kronos-integration/service-http": "^14.0.8"
   },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^13.0.1",
@@ -39,7 +39,7 @@
     "semantic-release": "^25.0.2"
   },
   "optionalDependencies": {
-    "@kronos-integration/service-systemd": "^4.0.0"
+    "@kronos-integration/service-systemd": "^4.0.1"
   },
   "engines": {
     "node": ">=24.11.0"
