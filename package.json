@@ -4,6 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "packageManager": "npm@11.6.4+sha512.1118cab46a05a50aee6bff5b1b4fa1df18afff89d57465620a3518035026955db87c5bdf9d207b07b7487d99f2490d450cb774655ad63ec2cba7bf1d0ad25d45",
   "description": "Collect content security policy (CSP) records",
   "keywords": [
     "csp",
@@ -16,7 +17,7 @@
       "email": "markus.felten@gmx.de"
     }
   ],
-  "license": "BSD-2-Clause",
+  "license": "0BSD",
   "bin": {
     "csp-record": "src/csp-record-cli.mjs"
   },
@@ -35,11 +36,12 @@
     "@semantic-release/release-notes-generator": "^14.1.0",
     "ava": "^6.4.1",
     "mf-hosting": "^2.9.5",
-    "npm-pkgbuild": "^19.0.7",
+    "npm-pkgbuild": "^19.0.8",
     "semantic-release": "^25.0.2"
   },
   "optionalDependencies": {
-    "@kronos-integration/service-systemd": "^4.2.1"
+    "@kronos-integration/service-systemd": "^4.2.1",
+    "mf-hosting": "^2.9.5"
   },
   "engines": {
     "node": ">=24.11.1"
@@ -128,6 +130,5 @@
       "arlac77/template-arlac77-github",
       "arlac77/template-kronos-app"
     ]
-  },
-  "packageManager": "npm@11.6.4+sha512.1118cab46a05a50aee6bff5b1b4fa1df18afff89d57465620a3518035026955db87c5bdf9d207b07b7487d99f2490d450cb774655ad63ec2cba7bf1d0ad25d45"
+  }
 }
